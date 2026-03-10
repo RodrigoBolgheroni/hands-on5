@@ -1,0 +1,199 @@
+:root {
+    --bg: #fdfaf6;
+    --text: #2c2c2c;
+    --light-text: #666;
+    --border: #e5e0d5;
+    --hover-bg: #f5f2ed;
+    --shadow: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+header {
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--border);
+}
+
+header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+header p {
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #b35c00;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    background: var(--hover-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+li:hover {
+    transform: translateX(6px);
+    box-shadow: 0 4px 10px var(--shadow);
+    border-color: #c9bfae;
+}
+
+li img {
+    width: 36px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+li div {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+li div a {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+li div p {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+li::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+li:hover::before {
+    opacity: 0.12;
+}
+
+li:nth-child(1):hover::before {
+    background-image: url("https://flagcdn.com/w320/nl.png");
+}
+
+li:nth-child(2):hover::before {
+    background-image: url("https://flagcdn.com/w320/ch.png");
+}
+
+li:nth-child(3):hover::before {
+    background-image: url("https://flagcdn.com/w320/kr.png");
+}
+
+li:nth-child(4):hover::before {
+    background-image: url("https://flagcdn.com/w320/it.png");
+}
+
+li:nth-child(5):hover::before {
+    background-image: url("https://flagcdn.com/w320/es.png");
+}
+
+li:nth-child(6):hover::before {
+    background-image: url("https://flagcdn.com/w320/al.png");
+}
+
+footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.82rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+li:nth-child(1) div a:hover {
+    background: linear-gradient(90deg, #21468B, #FF0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(1.2);
+}
+
+li:nth-child(2) div a:hover {
+    background: linear-gradient(90deg, #FF0000, #FF0000, #FF0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(1.2);
+}
+
+li:nth-child(3) div a:hover {
+    background: linear-gradient(90deg, #CD0000, #003478, #CD0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(1.2);
+}
+
+li:nth-child(4) div a:hover {
+    background: linear-gradient(90deg, #008C45, #CD212A, #008C45);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(1.2);
+}
+
+li:nth-child(5) div a:hover {
+    background: linear-gradient(90deg, #AA151B, #F1BF00, #AA151B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(1.2);
+}
+
+li:nth-child(6) div a:hover {
+    background: linear-gradient(90deg, #E41E26, #000000, #E41E26);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(1.2);
+}
