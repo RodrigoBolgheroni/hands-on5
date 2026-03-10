@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Bebas+Neue&display=swap');
+
+*,
+*::before,
+*::after {
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root {
+
+--spain-red:#AA151B;
+--spain-yellow:#F1BF00;
+
+--deep-red:#8C1015;
+--cream:#F5EFE0;
+--dark:#1A0F00;
+}
+
+html,body{
+height:100%;
+font-family:'Cormorant Garamond',serif;
+background:var(--cream);
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+width:100%;
+height:100vh;
+min-height:600px;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+}
+
+.hero-bg{
+position:absolute;
+inset:0;
+background:url('images/spain-hero.jpg') center/cover no-repeat;
+transform:scale(1.06);
+animation:slowzoom 18s ease-in-out infinite alternate;
+}
+
+.hero-tint{
+position:absolute;
+inset:0;
+background:linear-gradient(
+to bottom,
+rgba(170,21,27,0.2) 0%,
+rgba(241,191,0,0.35) 50%,
+rgba(26,15,0,0.85) 100%
+);
+z-index:1;
+}
+
+@keyframes slowzoom{
+from{transform:scale(1.06)}
+to{transform:scale(1.12)}
+}
+
+.hero-title{
+position:absolute;
+top:0;
+left:0;
+right:0;
+z-index:4;
+padding:0.5em 0.35em;
+font-family:'Playfair Display',serif;
+font-weight:900;
+font-size:clamp(7rem,22vw,22rem);
+line-height:0.88;
+color:var(--cream);
+letter-spacing:-0.02em;
+}
+
+.hero-title .nl{
+font-style:italic;
+color:var(--spain-yellow);
+}
+
+.hero-sub{
+position:relative;
+z-index:5;
+padding:0 2.4rem 3.5rem 2.4rem;
+display:flex;
+align-items:flex-end;
+}
+
+.hero-rule{
+display:block;
+width:40px;
+height:2px;
+background:var(--spain-yellow);
+margin-bottom:0.8rem;
+}
+
+.hero-tagline{
+font-size:0.9rem;
+letter-spacing:0.18em;
+text-transform:uppercase;
+line-height:1.6;
+color:var(--cream);
+}
+
+/* NAV */
+
+nav{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+z-index:10;
+background:var(--cream);
+padding:0 2.4rem;
+height:54px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.nav-brand{
+font-family:'Bebas Neue',sans-serif;
+font-size:1.2rem;
+letter-spacing:0.12em;
+color:var(--spain-red);
+}
+
+.nav-links{
+display:flex;
+gap:2.4rem;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+font-size:0.75rem;
+letter-spacing:0.2em;
+text-transform:uppercase;
+color:var(--dark);
+}
+
+.nav-links a:hover{
+color:var(--spain-red);
+}
+
+/* INTRO */
+
+.section-intro{
+padding:7rem 2.4rem 6rem;
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.eyebrow{
+font-size:0.7rem;
+letter-spacing:0.28em;
+text-transform:uppercase;
+color:var(--spain-red);
+margin-bottom:1.6rem;
+}
+
+.section-intro h2{
+font-family:'Playfair Display',serif;
+font-size:clamp(2.4rem,6vw,5rem);
+font-weight:900;
+line-height:1.05;
+color:var(--dark);
+margin-bottom:2rem;
+}
+
+.section-intro h2 em{
+color:var(--spain-red);
+}
+
+.section-intro p{
+font-size:1.1rem;
+line-height:1.8;
+color:#4a3820;
+max-width:600px;
+margin:auto;
+}
+
+/* SECTIONS */
+
+.section-label{
+font-size:0.72rem;
+letter-spacing:0.28em;
+text-transform:uppercase;
+color:var(--spain-red);
+margin-bottom:1rem;
+}
+
+.section-heading{
+font-family:'Playfair Display',serif;
+font-size:clamp(2.2rem,5vw,4rem);
+font-weight:900;
+line-height:1.05;
+margin-bottom:3.5rem;
+}
+
+.section-heading em{
+color:var(--spain-red);
+}
+
+/* CARDS */
+
+.person-cards,
+.places-cards,
+.curio-legais-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:1.5rem;
+}
+
+.person-card,
+.place-card,
+.curio-legais-card{
+overflow:hidden;
+position:relative;
+background:rgba(0,0,0,0.04);
+border:1px solid rgba(0,0,0,0.08);
+transition:transform .35s;
+}
+
+.person-card:hover,
+.place-card:hover,
+.curio-legais-card:hover{
+transform:translateY(-5px);
+}
+
+.person-card-img,
+.place-card-img{
+width:100%;
+height:280px;
+background-size:cover;
+background-position:center;
+}
+
+.person-card-body{
+padding:1.6rem;
+}
+
+.person-era{
+font-family:'Bebas Neue',sans-serif;
+font-size:0.72rem;
+letter-spacing:0.22em;
+color:var(--spain-red);
+margin-bottom:0.5rem;
+}
+
+.person-card h3{
+font-family:'Playfair Display',serif;
+font-size:1.4rem;
+margin-bottom:0.6rem;
+}
+
+.person-card p{
+font-size:0.9rem;
+line-height:1.7;
+}
+
+.place-card{
+aspect-ratio:4/5;
+}
+
+.place-card-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+}
+
+.place-card-content{
+position:absolute;
+bottom:0;
+padding:1.6rem;
+color:white;
+}
+
+.place-divider{
+width:28px;
+height:2px;
+background:var(--spain-yellow);
+margin-bottom:0.8rem;
+}
+
+/* CURIOSIDADES */
+
+.curio-legais{
+background:var(--dark);
+padding:7rem 0;
+color:white;
+}
+
+.curio-legais-inner{
+max-width:1200px;
+margin:auto;
+padding:0 2.4rem;
+}
+
+.curio-legais-card{
+padding:2rem;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.curio-legais-card h3{
+font-family:'Playfair Display',serif;
+margin-bottom:0.8rem;
+}
+
+.curio-badge{
+margin-top:1.2rem;
+display:inline-block;
+font-family:'Bebas Neue',sans-serif;
+font-size:0.65rem;
+letter-spacing:0.2em;
+padding:0.3rem 0.8rem;
+border:1px solid var(--spain-red);
+color:var(--spain-red);
+}
+
+/* QUOTE */
+
+.quote-band{
+background:var(--spain-red);
+padding:5rem 2rem;
+text-align:center;
+color:white;
+}
+
+.quote-band blockquote{
+font-family:'Playfair Display',serif;
+font-size:clamp(1.8rem,4vw,3rem);
+font-style:italic;
+margin-bottom:1rem;
+}
+
+/* FLAG */
+
+.flag-stripe{
+display:flex;
+height:12px;
+}
+
+.flag-stripe div{
+flex:1;
+}
+
+.flag-stripe div:nth-child(1){
+background:#AA151B;
+}
+
+.flag-stripe div:nth-child(2){
+background:#F1BF00;
+}
+
+.flag-stripe div:nth-child(3){
+background:#AA151B;
+}
+
+/* FOOTER */
+
+footer{
+background:var(--dark);
+color:rgba(255,255,255,0.4);
+padding:2rem;
+display:flex;
+justify-content:space-between;
+font-size:0.75rem;
+text-transform:uppercase;
+}
+
+footer .brand{
+font-family:'Bebas Neue',sans-serif;
+font-size:1.3rem;
+color:var(--spain-yellow);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.person-cards,
+.places-cards,
+.curio-legais-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+.nav-links{
+display:none;
+}
+
+.hero-sub{
+flex-direction:column;
+}
+
+}
