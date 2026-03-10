@@ -131,7 +131,7 @@ li:nth-child(2):hover::before {
 }
 
 li:nth-child(3):hover::before {
-    background-image: url("https://flagcdn.com/w320/kr.png");
+    background-image: url("https://flagcdn.com/w320/fr.png");
 }
 
 li:nth-child(4):hover::before {
