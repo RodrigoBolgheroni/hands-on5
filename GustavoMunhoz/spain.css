@@ -41,7 +41,7 @@ justify-content:flex-end;
 .hero-bg{
 position:absolute;
 inset:0;
-background:url('images/spain-hero.jpg') center/cover no-repeat;
+background:url('imgs/spain.jpg') center/cover no-repeat;
 transform:scale(1.06);
 animation:slowzoom 18s ease-in-out infinite alternate;
 }
